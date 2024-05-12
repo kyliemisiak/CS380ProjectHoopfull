@@ -86,9 +86,53 @@ public class DatabaseController {
     
         }
     
+        public void createCaptain(String captainID, String captainName, String teamID, String userName, String pass) {
 
+            try {
+                //conect to the database using the connect method
+                Connection con = connect();
+    
+    
+    
+                String add = "INSERT INTO captain (captainID, captainName, teamID, userName, pass) VALUES (?,?,?,?,?);";
+                
+                PreparedStatement ps = con.prepareStatement(add);
+                //NEED ERROR CHECKING FOR USERNAME AND PASS AS WILL BE FOREIGN KEY
+                ps.setString(1, captainID);
+                ps.setString(2, captainName);
+                ps.setString(3, teamID);
+                ps.setString(4, userName);
+                ps.setString(5, pass);
+                
+                ps.execute();
+    
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    
+                }
+            
+        }
 
-        
+        public void createAccount(String userName, String pass) {
+
+            try {
+                //conect to the database using the connect method
+                Connection con = connect();
+
+                String add = "INSERT INTO account (userName, pass) VALUES (?,?);";
+                
+                PreparedStatement ps = con.prepareStatement(add);
+                
+                ps.setString(1, userName);
+                ps.setString(2, pass);
+                
+                ps.execute();
+    
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    
+                }
+        }
     
 
 
