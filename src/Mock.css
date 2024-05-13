@@ -1,0 +1,48 @@
+
+.phone-container {
+  width: 375px; 
+  height: 667px; 
+  border: 1px solid #000; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background-color: #fff; 
+  overflow: hidden; 
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+}
+
+.content {
+  padding: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ccc;
+  padding: 10px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.time {
+  font-size: 18px;
+}
+
