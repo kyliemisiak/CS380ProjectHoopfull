@@ -5,15 +5,16 @@
 
 
 .App-header {
-  background-color: #f26908;
+  background-color: rgb(255, 140, 0);
   max-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
 }
+
 
 .App-link {
   color: #ffd902;
