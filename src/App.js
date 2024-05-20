@@ -22,34 +22,34 @@ function App() {
 
   const renderIconButton = (props, ref) => {
     return (
-      <IconButton {...props} ref={ref} icon={<MenuIcon />} padding-left = '20px' color="orange" appearance="primary" />
+      <IconButton {...props} ref={ref} icon={<MenuIcon />} padding-left='20px' color="orange" appearance="primary" />
     );
   };
-  
-  
+
+
   return (
     <div className="App">
-      <header className ="App-header">
-      <Dropdown renderToggle={renderIconButton} >
-          <Dropdown.Item as={NavLink} href ="/" icon={<PageIcon />}>
+      <header className="App-header">
+        <Dropdown renderToggle={renderIconButton} >
+          <Dropdown.Item as={NavLink} href="/" icon={<PageIcon />}>
             Home
           </Dropdown.Item>
-          <Dropdown.Item as={NavLink} href ="/map" icon={<ExploreIcon />}>
+          <Dropdown.Item as={NavLink} href="/map" icon={<ExploreIcon />}>
             Map
           </Dropdown.Item>
-          <Dropdown.Item as={NavLink} href ="/teams" icon={<PeoplesIcon />}>
+          <Dropdown.Item as={NavLink} href="/teams" icon={<PeoplesIcon />}>
             Teams
           </Dropdown.Item>
         </Dropdown>
       </header>
-          <Routes>
+      <Routes>
             /*need to specify the path to each file and import them*/
-            <Route path="/" element={<Home/>}></Route>
-            <Route path="/map" element={<Map/>}></Route>
-            <Route path="/teams" element={<Teams/>}></Route>
-          </Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/map" element={<Map />}></Route>
+        <Route path="/teams" element={<Teams />}></Route>
+      </Routes>
     </div>
-    
+
   );
 }
 
