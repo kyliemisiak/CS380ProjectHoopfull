@@ -1,0 +1,18 @@
+// imports
+
+function Teams() {
+    return (
+        <div className="teams">
+            <section className="window">
+                <h1>Window 1</h1>
+            </section>
+
+            <section className="window">
+                <h1>Window 2</h1>
+            </section>
+        </div>
+    );
+
+}
+
+export default Teams;
