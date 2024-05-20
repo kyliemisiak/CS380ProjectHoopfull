@@ -38,7 +38,7 @@ function App() {
         </Dropdown>
       </header>
           <Routes>
-            /*need to specify the path to ech file and imort them*/
+            /*need to specify the path to each file and import them*/
             <Route path="/" element={<Home/>}></Route>
             <Route path="/map" element={<Map/>}></Route>
           </Routes>
