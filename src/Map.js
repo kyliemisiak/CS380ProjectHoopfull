@@ -1,13 +1,17 @@
 
+import flyer from '../src/imgs/Basketballflyer.png'
+
 
 function Map() {
     return (
       <div className="Map">
-        <header>MAp</header>
-        <body>
-            <img src={'https://i.redd.it/rjbb2f83jkl71.jpg'} alt="My Image" />
-            <p>Heeloooooo this should be an image</p>
-          </body>
+        <h1 className="title">Map</h1>
+        <div className="map-placement">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1DI5SODfRVzVP7Ou8z3oFypzvHG1w7EQ&ehbc=2E312F&noprof=1" width="380" height="235"></iframe>
+        </div>
+        <div>
+          <img src = {flyer} width={335} height={500} alt = 'flyer'/>
+        </div>
       </div>
     );
   }

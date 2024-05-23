@@ -1,5 +1,5 @@
 body {
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -8,29 +8,67 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.title {
+  font-family: 'Impact', 'fantasy';
+  font-stretch: expanded;
+  font-weight: 800;
+  color: white;
+}
+
+.subtitle{
+  font-family: cursive;
+  padding-bottom: 100px;
+  color: black;
+}
+
+.map-placement{
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+
+.info{
+  padding-top: 20px;
+  justify-self: center;
+}
+
+.text{
+  color: black;
+  padding-bottom: 30px;
+}
+
+.img{
+  padding: 100;
+}
+
+.pics{
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+}
+
 .App{
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 140, 0);
+  margin-left: auto;
+  margin-left: auto;
+  width: 500px;
+  height: 100vh;
+}
+
+
+Map{
   align-items: center;
   justify-content: center;
   max-width: 100vh;
   height: 100vh;
 }
 
-footer {
-  width: 100%;
-  max-width: 100vh;
-  min-height: 6vh;
-  position: fixed;
-  align-items: center;
-  border: 1px solid #000000;
-  background-color: darkgray;
-  justify-content: center;
-}
-
 :root {
   flex-grow: 1;
   display: flex;
   max-height: 100vh;
-  max-width: 100%;
+  width: 100%;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
