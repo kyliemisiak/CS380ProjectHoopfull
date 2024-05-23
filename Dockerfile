@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Start server
-RUN node server.js
+#RUN node server.js
 
 EXPOSE 3000
 
