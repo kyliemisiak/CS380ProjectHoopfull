@@ -225,6 +225,67 @@ class DatabaseController {
             await connection.end();
         }
     }
+
+    async selectPlayer(pName) {
+        const connection = await this.connect();
+        if (!connection) return;
+
+        try {
+            const add = 'SELECT * FROM players WHERE playerName = ?;';
+            const [rows] = await connection.execute(add, [pName]);
+            return rows;
+        } catch (error) {
+            console.error(error);
+        } finally {
+            await connection.end();
+        }
+    }
+
+    async selectTeam(tName) {
+        const connection = await this.connect();
+        if (!connection) return;
+
+        try {
+            const add = 'SELECT * FROM teams WHERE teamName = ?;';
+            const [rows] = await connection.execute(add, [tName]);
+            return rows;
+        } catch (error) {
+            console.error(error);
+        } finally {
+            await connection.end();
+        }
+    }
+
+    async selectAllTeams() {
+        const connection = await this.connect();
+        if (!connection) return;
+
+        try {
+            const add = 'SELECT teamName, amountOfPlayers, captainName FROM teams;';
+            const [rows] = await connection.execute(add);
+            return rows;
+        } catch (error) {
+            console.error(error);
+        } finally {
+            await connection.end();
+        }
+    }
+
+    async selectAllFromTeamPlayers(tID) {
+        const connection = await this.connect();
+        if (!connection) return;
+
+        try {
+            const add = 'SELECT * FROM players WHERE teamID = ?;';
+            const [rows] = await connection.execute(add, [tID]);
+            return rows;
+        } catch (error) {
+            console.error(error);
+        } finally {
+            await connection.end();
+        }
+    }
+
 }
 
 module.exports = DatabaseController;
