@@ -45,14 +45,11 @@ export const Login = (props) => {
                         required
                     />
                 </div>
-                <div className="button-container"> {/* Encapsulate the login button within its own container */}
+                <div className="button-container"> {/* Encapsulate the login and register buttons within a single container */}
                     <button type="submit" className="login-btn">Login</button>
+                    <button className="register-btn" onClick={() => props.onFormSwitch('register')}>Register</button>
                 </div>
             </form>
-            <div className="link-btn-container">
-                <label htmlFor="button">Don't Have An Account?? </label>
-                <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Register Here</button>
-            </div>
         </div>
     );
 };

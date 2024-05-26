@@ -1,3 +1,4 @@
+import "./Register.css"; // Import CSS file
 import React, {useState} from "react";
 export const Register = (props)=> {
 
