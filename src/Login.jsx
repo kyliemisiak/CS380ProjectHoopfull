@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 
 export const Login = (props) => {
     const [email, setEmail] = useState('');
-    const [password,setPass] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    }
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,6 +30,8 @@ export const Login = (props) => {
                         id="email"
                         name="email"
                         placeholder="youremail@gmail.com"
+                        onChange={handleEmailChange}
+                        required
                     />
                 </div>
                 <div>
@@ -30,14 +40,19 @@ export const Login = (props) => {
                         type="password"
                         id="password"
                         name="password"
-                        placeholder="*******"
-
+                        placeholder="*************"
+                        onChange={handlePasswordChange}
+                        required
                     />
                 </div>
-                <button type="Log In">Login</button>
+                <div className="button-container"> {/* Encapsulate the login button within its own container */}
+                    <button type="submit" className="login-btn">Login</button>
+                </div>
             </form>
-            <label htmlFor="button">Don't Have An Account?? </label>
-            <button onClick={() => props.onFormSwitch('register')}>Register Here</button>
+            <div className="link-btn-container">
+                <label htmlFor="button">Don't Have An Account?? </label>
+                <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Register Here</button>
+            </div>
         </div>
     );
 };
