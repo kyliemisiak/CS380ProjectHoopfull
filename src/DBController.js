@@ -225,6 +225,85 @@ class DatabaseController {
             await connection.end();
         }
     }
+
+    async selectPlayer(pName) {
+        const connection = await this.connect();
+        if (!connection) return;
+
+        try {
+            const add = 'SELECT playerName FROM players WHERE playerName = ?;';
+            const [rows] = await connection.execute(add, [pName]);
+            return rows;
+        } catch (error) {
+            console.error(error);
+        } finally {
+            await connection.end();
+        }
+    }
+
+    async selectTeam(tName) {
+        const connection = await this.connect();
+        if (!connection) return;
+
+        try {
+            const add = 'SELECT teamName, amountOfPlayers, captainName FROM teams WHERE teamName = ?;';
+            const [rows] = await connection.execute(add, [tName]);
+            return rows;
+        } catch (error) {
+            console.error(error);
+        } finally {
+            await connection.end();
+        }
+    }
+
+    async selectAllTeams() {
+        const connection = await this.connect();
+        if (!connection) return;
+
+        try {
+            const add = 'SELECT teamName, amountOfPlayers, captainName FROM teams;';
+            const [rows] = await connection.execute(add);
+            return rows;
+        } catch (error) {
+            console.error(error);
+        } finally {
+            await connection.end();
+        }
+    }
+
+    async selectAllFromTeamPlayers(tID) {
+        const connection = await this.connect();
+        if (!connection) return;
+
+        try {
+            const add = 'SELECT playerName FROM players WHERE teamID = ?;';
+            const [rows] = await connection.execute(add, [tID]);
+            return rows;
+        } catch (error) {
+            console.error(error);
+        } finally {
+            await connection.end();
+        }
+    }
+
+    async selectCaptain(captainID) {
+        const connection = await this.connect();
+        if (!connection) return;
+
+        try {
+            const add = 'SELECT captainName FROM captain WHERE captainID = ?;';
+            const [rows] = await connection.execute(add, [captainID]);
+            return rows;
+        } catch (error) {
+            console.error(error);
+        } finally {
+            await connection.end();
+        }
+    }
+
+    async
+
+
 }
 
 module.exports = DatabaseController;
