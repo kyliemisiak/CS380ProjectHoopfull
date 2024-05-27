@@ -227,4 +227,23 @@ class DatabaseController {
     }
 }
 
+// I added this --Connor
+// feel free to axe it if sucks
+async selectPlayersFromTeam(teamID) {
+        const connection = await this.connect();
+        if (!connection) return;
+
+        try {
+            const query = 'SELECT * FROM players WHERE teamID = ?;';
+            const [rows] = await connection.execute(query, [teamID]);
+            return rows;
+        } catch (error) {
+            console.error(error);
+        } finally {
+            await connection.end();
+        }
+
+        return [];
+    }
+
 module.exports = DatabaseController;

@@ -11,7 +11,7 @@ import Home from './Home'
 import Map from './Map'
 import Teams from './Teams'
 import "rsuite/dist/rsuite.min.css";
-import {Login} from "./Login";
+//import {Login} from "./Login";
 import {Register} from "./Register";
 
 function App() {
@@ -50,7 +50,6 @@ function App() {
         <Route path="/map" element={<Map />}></Route>
         <Route path="/teams" element={<Teams />}></Route>
       </Routes>
-      <Login />
     </div>
 
   );

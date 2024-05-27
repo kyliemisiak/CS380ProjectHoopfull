@@ -123,3 +123,33 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+-- Insert ACCOUNTS
+INSERT INTO `hoopfulDB`.`account` (`userName`, `pass`)
+VALUES ('coach1', 'password');
+
+-- Insert CAPTAINS
+INSERT INTO `hoopfulDB`.`Captain` (`captainID`, `captainName`, `teamID`, `userName`, `pass`)
+VALUES ('000000001', 'John Doe', 'TEAM0001', 'coach1', 'password');
+
+-- Insert a TEAMS
+INSERT INTO `hoopfulDB`.`Teams` (`teamID`, `teamName`, `amountOfPlayers`, `captainID`, `captainName`)
+VALUES ('TEAM0001', 'The Hoopsters', 5, '000000001', 'John Doe');
+
+-- Insert PLAYERS for the above TEAM
+INSERT INTO `hoopfulDB`.`Players` (`playerID`, `teamID`, `playerName`)
+VALUES
+('PLY000001', 'Red Tigers', 'Player One'),
+('PLY000002', 'Red Tigers', 'Player Two'),
+('PLY000003', 'Red Tigers', 'Player Three'),
+('PLY000004', 'Red Tigers', 'Player Four'),
+('PLY000005', 'Red Tigers', 'Player Five');
+
+-- Insert TOURNAMENTS
+INSERT INTO `hoopfulDB`.`Touranments` (`tournamentID`, `tournamentName`, `amountOfTeams`, `location`)
+VALUES ('TOUR0001', 'Summer Slam', '10', 'New York');
+
+-- Insert TEAM into the TOURNAMENT
+INSERT INTO `hoopfulDB`.`Plays_In` (`tournamentID`, `teamID`)
+VALUES ('TOUR0001', 'Red Tigers');

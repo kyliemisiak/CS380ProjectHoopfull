@@ -1,48 +1,28 @@
-
-// reading, maybe better??: https://expressjs.com/en/guide/database-integration.html
-
-// dependencies
 const express = require('express');
-const mysql = require('mysql2');
 const cors = require('cors');
-const bodyParser = require('body-parser');
+const app = express();
+const port = 3001; // Ensure this matches the port your server is running on
 
-const app = express(); // server
-const port = 3308;
+// Enable CORS
+app.use(cors());
 
-app.use(cors()); // Cross-Origin Resource Sharing
-app.use(bodyParser.json()); // https://www.npmjs.com/package/body-parser
+// Your existing routes and middleware
+app.use(express.json());
 
-// CONFIGURATION 
-// breakout in ENV vars
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'hoopfulDB'
-});
-
-// Connect to the database??
-db.connect(err => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-    return;
-  }
-  console.log('Connected to the MySQL database.');
-});
-
-// route to get data
-app.get('/api/data', (req, res) => {
-  db.query('SELECT * Teams', (err, results) => {
-    if (err) {
-      res.status(500).send(err);
-    } else {
-      res.json(results);
+app.get('/api/players/:teamID', async (req, res) => {
+    const { teamID } = req.params;
+    const db = new DatabaseController();
+    try {
+        const players = await db.getPlayersByTeam(teamID);
+        res.json(players);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error fetching players');
     }
-  });
 });
 
-// Start the server
+// Other routes and server setup
+
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+    console.log(`Server running on port ${port}`);
 });
