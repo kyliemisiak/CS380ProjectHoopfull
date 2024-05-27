@@ -25,11 +25,6 @@
     border: 1px solid white;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.8); /* Add opacity for better readability */
-}
-
-/* Style the form */
-.login-form,
-.register-form {
     max-width: 400px; /* Limit the width of the form */
 }
 
@@ -49,20 +44,13 @@
 }
 
 /* Style buttons */
-.login-form button{
-    background-color: #f27d0c;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: right;
-
-}
+.login-form button,
 .register-form button {
     background-color: #f27d0c;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
-    text-align: -webkit-center;
+    text-align: center; /* Center the button text */
 }
 
 /* Style link button */
@@ -72,7 +60,6 @@
     color: #333; /* Adjust link button color */
     text-decoration: underline;
     cursor: pointer;
-
 }
 
 /* Style headings */
@@ -80,4 +67,23 @@ h2 {
     color: #fff;
     text-align: center;
     margin-bottom: 20px; /* Add spacing below headings */
+}
+/* CSS */
+.form-group {
+    display: compact;
+    align-items: baseline;
+    margin-bottom: 5px; /* Adjust as needed */
+}
+
+label {
+    min-width: 15px; /* Adjust the width based on your design */
+    margin-right: 100px; /* Add some spacing between label and input */
+}
+
+input {
+    flex: 100; /* Let the input field expand to fill remaining space */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
 }

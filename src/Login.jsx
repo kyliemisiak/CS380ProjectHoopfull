@@ -22,7 +22,8 @@ export const Login = (props) => {
         <div className="auth-form-container">
             <h2>Login Page</h2>
             <form className="login-form" onSubmit={handleSubmit}>
-                <div>
+                {/* JSX */}
+                <div className="form-group">
                     <label htmlFor="email">Email: </label>
                     <input
                         type="email"
@@ -34,19 +35,21 @@ export const Login = (props) => {
                         required
                     />
                 </div>
-                <div>
+                <div className="form-group">
                     <label htmlFor="password">Password: </label>
                     <input
                         type="password"
                         id="password"
                         name="password"
-                        placeholder="*************"
+                        placeholder="***********"
                         onChange={handlePasswordChange}
                         required
                     />
                 </div>
+
                 <div className="button-container"> {/* Encapsulate the login and register buttons within a single container */}
                     <button type="submit" className="login-btn">Login</button>
+                    <div></div>
                     <button className="register-btn" onClick={() => props.onFormSwitch('register')}>Register</button>
                 </div>
             </form>
