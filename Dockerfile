@@ -14,8 +14,7 @@ RUN npm install
 # Copy the entire project 
 COPY . .
 
-# Start server
-RUN node server.js
+
 
 EXPOSE 3000
 

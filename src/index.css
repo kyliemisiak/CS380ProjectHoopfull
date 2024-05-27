@@ -36,8 +36,20 @@ body {
   padding-bottom: 30px;
 }
 
+.label{
+  color: black;
+  padding-left: 20x;
+  padding-right: 115px;
+  padding-top: 30px;
+}
+
 .img{
   padding: 100;
+}
+
+.loginBut{
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .pics{
