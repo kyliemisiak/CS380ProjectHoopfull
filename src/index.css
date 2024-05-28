@@ -52,6 +52,10 @@ body {
   padding-bottom: 20px;
 }
 
+.padding{
+  padding: 100px;
+}
+
 .pics{
   padding-left: 25px;
   padding-right: 25px;

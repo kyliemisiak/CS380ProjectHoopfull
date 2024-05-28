@@ -24,31 +24,33 @@ function Home() {
         <img src={homeImg} width={350} height={350} alt='home' />
       </div>
       <div className='info'>
-        <p1 className='text'>Welcome to Hoopfull Tornaments, a place where you can organize your basketball tournaments.
-          This website(?) is designed to make it easy to look at the ongoing progression
-          of the tournament and the location of the tournament. We want to help make setting up a turnament much easier.
+        <p1 className='text'>Welcome to Hoopfull Tournaments, a place where you can organize your basketball tournaments.
+          This website is designed to make it easy to look at the ongoing progression
+          of the tournament and the location of the tournament. We want to help make setting up a tournament much easier.
         </p1>
       </div>
-        </section>
+          <div className='info'>
+            <h4 className='text'>Here are some of our past tournaments:</h4>
+          </div>
+          <div className='pics'>
 
-        <section className="window">
-<div className='info'>
-        <h4 className='text'>Here are some of our past tournaments:</h4>
-      </div>
-      <div className='pics'>
-        <div className='pics'>
-          <img src={pic1} width={250} height={175} alt='pic1' />
-        </div>
-        <div className='pics'>
-          <img src={pic2} width={250} height={175} alt='pic2' />
-        </div>
-        <div className='pics'>
-          <img src={pic3} width={250} height={175} alt='pic3' />
-        </div>
-        <div className='pics'>
-          <img src={pic4} width={250} height={175} alt='pic4' />
-        </div>
-      </div>
+            <div className='pics'>
+              <img src={pic1} width={250} height={175} alt='pic1' />
+            </div>
+
+            <div className='pics'>
+              <img src={pic2} width={250} height={175} alt='pic2' />
+            </div>
+
+            <div className='pics'>
+              <img src={pic3} width={250} height={175} alt='pic3' />
+            </div>
+
+            <div className='pics'>
+              <img src={pic4} width={250} height={175} alt='pic4' />
+            </div>
+
+          </div>
         </section>
 
     </div>

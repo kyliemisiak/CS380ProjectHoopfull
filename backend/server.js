@@ -32,6 +32,17 @@ app.post('/login', (req, res) => {
     })
 })
 
+app.post('/teams', (req, res) => {
+  const sql = "SELECT * FROM players WHERE teamID = ?"
+  
+  db.query(sql, [req.body.teamID], (err, data) => {
+      if (err) return res.json("team not found!")
+      if(data.length > 0){
+        res.send(data);
+      }
+  })
+})
+
 
 // Start the server
 app.listen(8801, () => {
