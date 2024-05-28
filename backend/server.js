@@ -33,13 +33,39 @@ app.post('/login', (req, res) => {
 })
 
 app.post('/teams', (req, res) => {
-  const sql = "SELECT * FROM players WHERE teamID = ?"
+  const showTeam = "SELECT * FROM players WHERE teamID = ?"
   
-  db.query(sql, [req.body.teamID], (err, data) => {
+  db.query(showTeam, [req.body.teamID], (err, data) => {
       if (err) return res.json("team not found!")
       if(data.length > 0){
         res.send(data);
       }
+  })
+})
+
+app.post('/addPlayer', (req, res) => {
+  const addPlayer = "INSERT INTO players (`playerID`, `teamID`, `playerName`) VALUES (?, ?, ?)";
+
+  
+  const playerID = req.body.playerID;
+  const teamID = req.body.teamID;
+  const playerName = req.body.playerName;
+  
+  
+  db.query(addPlayer, [playerID, teamID, playerName], (err, data) => {
+      if (err) return res.json("Error")
+      return res.json(data);
+  })
+})
+
+app.post('/remove', (req, res) => {
+  const removePlayer = "DELETE FROM players WHERE playerName= ?";
+
+  const playerName = req.body.playerName;
+  
+  db.query(removePlayer, [playerName], (err, data) => {
+      if (err) return res.json("Error")
+      return res.json(data);
   })
 })
 

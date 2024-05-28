@@ -49,7 +49,6 @@ function Home() {
             <div className='pics'>
               <img src={pic4} width={250} height={175} alt='pic4' />
             </div>
-
           </div>
         </section>
 

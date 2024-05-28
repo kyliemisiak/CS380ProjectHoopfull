@@ -43,6 +43,13 @@ body {
   padding-top: 30px;
 }
 
+.labelPlayerName{
+  color: black;
+  padding-left: 20x;
+  padding-right: 95px;
+  padding-top: 30px;
+}
+
 .img{
   padding: 100;
 }
@@ -54,6 +61,11 @@ body {
 
 .padding{
   padding: 100px;
+}
+
+.teamsDisplay{
+  padding-right: 70px;
+  padding-left: 210px;
 }
 
 .pics{
