@@ -22,6 +22,10 @@ const Register = () => {
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
 
+    const [teamName, setTeamName] = useState('');
+    const [playerName, setPlayerName] = useState('');
+    const [playerId, setPlayerId] = useState('');
+
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
@@ -52,6 +56,9 @@ const Register = () => {
         setUser('');
         setPwd('');
         setMatchPwd('');
+        setTeamName('');
+        setPlayerName('');
+        setPlayerId('');
     }
 
     return (
@@ -84,12 +91,7 @@ const Register = () => {
                                 onBlur={() => setUserFocus(false)}
                             />
                         </div>
-                        <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                            4 to 24 characters.<br />
-                            Must begin with a letter.<br />
-                            Letters, numbers, underscores, hyphens allowed.
-                        </p>
+
 
                         <div className="input-group">
                             <label htmlFor="password">Password:</label>
@@ -105,15 +107,9 @@ const Register = () => {
                                 onBlur={() => setPwdFocus(false)}
                             />
                         </div>
-                        <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                            8 to 24 characters.<br />
-                            Must include uppercase and lowercase letters, a number and a special character.<br />
-                            Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
-                        </p>
 
                         <div className="input-group">
-                            <label htmlFor="confirm_pwd">Confirm Password:</label>
+                            <label htmlFor="confirm_pwd">Confirm:</label>
                             <input
                                 type="password"
                                 id="confirm_pwd"
@@ -126,18 +122,45 @@ const Register = () => {
                                 onBlur={() => setMatchFocus(false)}
                             />
                         </div>
-                        <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                            Must match the first password input field.
-                        </p>
+
+
+                        <div className="input-group">
+                            <label htmlFor="teamName">Team Name:</label>
+                            <input
+                                type="text"
+                                id="teamName"
+                                onChange={(e) => setTeamName(e.target.value)}
+                                value={teamName}
+                            />
+                        </div>
+
+                        <div className="input-group">
+                            <label htmlFor="playerName">Player Name:</label>
+                            <input
+                                type="text"
+                                id="playerName"
+                                onChange={(e) => setPlayerName(e.target.value)}
+                                value={playerName}
+                            />
+                        </div>
+
+                        <div className="input-group">
+                            <label htmlFor="playerId">Player ID:</label>
+                            <input
+                                type="text"
+                                id="playerId"
+                                onChange={(e) => setPlayerId(e.target.value)}
+                                value={playerId}
+                            />
+                        </div>
 
                         <button disabled={!validName || !validPwd || !validMatch}>Sign Up</button>
                     </form>
                     <p>
-                        Already registered?<br/>
+                        Already registered?<br />
                         <span className="line">
-                            <a href="/login">Sign In</a>
-                        </span>
+              <a href="/login">Sign In</a>
+            </span>
                     </p>
                 </section>
             )}
