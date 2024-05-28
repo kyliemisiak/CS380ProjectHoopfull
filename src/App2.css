@@ -21,11 +21,11 @@
     flex-direction: column;
     align-items: center;
     text-align: left;
-    padding: 2rem;
+    padding: 3rem; /* Increase padding to increase the size of the container */
     border: 1px solid white;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.8); /* Add opacity for better readability */
-    max-width: 400px; /* Limit the width of the form */
+    max-width: 500px; /* Limit the width of the form */
 }
 
 /* Style form elements */
@@ -70,20 +70,21 @@ h2 {
 }
 /* CSS */
 .form-group {
-    display: compact;
-    align-items: baseline;
-    margin-bottom: 5px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Increase margin between form groups */
 }
 
 label {
-    min-width: 15px; /* Adjust the width based on your design */
-    margin-right: 100px; /* Add some spacing between label and input */
+    min-width: 120px; /* Adjust the width based on your design */
+    margin-right: 20px; /* Reduce the margin between label and input */
 }
 
 input {
-    flex: 100; /* Let the input field expand to fill remaining space */
-    padding: 15px;
+    flex: 1; /* Let the input field expand to fill remaining space */
+    padding: 12px; /* Increased padding for better spacing */
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
+    font-size: 16px; /* Increased font size for better visibility */
 }

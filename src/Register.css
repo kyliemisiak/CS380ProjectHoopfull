@@ -1,89 +1,77 @@
-.App {
-    text-align: center;
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(
-            79deg,
-            orange 0%,
-            #ff9c00 33%,
-            #ffe100 66%,
-            white 100%
-    );
+/* Register.css */
+
+/* Apply general styles */
+body {
+    background-color: #F7F7F7; /* Light gray background */
+    font-family: Arial, sans-serif;
 }
 
-/* Center the form containers */
-.auth-form-container,
-.login-form,
-.register-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    padding: 6rem;
-    border: 1px solid white;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8); /* Add opacity for better readability */
-    max-width: 400px; /* Limit the width of the form */
+.container {
+    max-width: 700px;
+    margin:  auto;
+    padding: 20px; /* Adjust padding for better spacing */
+    background-color: #FFFFFF; /* White background */
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
 }
 
-/* Style form elements */
-.login-form input[type='email'],
-.login-form input[type='password'],
-.login-form button,
-.register-form input[type='text'],
-.register-form input[type='password'],
-.register-form button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0; /* Add more spacing between form elements */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-}
-
-/* Style buttons */
-.login-form button,
-.register-form button {
-    background-color: #f27d0c;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center; /* Center the button text */
-}
-
-/* Style link button */
-.link-btn {
-    background-color: transparent;
-    border: none;
-    color: #333; /* Adjust link button color */
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-/* Style headings */
-h2 {
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px; /* Add spacing below headings */
-}
-/* CSS */
-.form-group {
-    display: compact;
-    align-items: baseline;
-    margin-bottom: 5px; /* Adjust as needed */
+h1 {
+    color: #FF6F00; /* Orange text */
 }
 
 label {
-    min-width: 20px; /* Adjust the width based on your design */
-    margin-right: 100px; /* Add some spacing between label and input */
+    display: inline-block;
+    font-weight: bold;
+    width: 120px; /* Adjust label width for better alignment */
+    margin-right: 10px; /* Add some spacing between label and input */
 }
 
-input {
-    flex: 100; /* Let the input field expand to fill remaining space */
-    padding: 15px;
-    border: 1px solid #ccc;
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 130px); /* Adjust input width to fit the container */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light gray border */
     border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
     outline: none;
+    border-color: #FF6F00; /* Orange border when focused */
+}
+
+button {
+    width: 100%; /* Make the button fill the container */
+    padding: 10px;
+    background-color: #FF6F00; /* Orange button background */
+    color: #FFFFFF; /* White button text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px; /* Add some space above the button */
+}
+
+button:disabled {
+    background-color: #CCCCCC; /* Light gray button background when disabled */
+    cursor: not-allowed;
+}
+
+.error-msg {
+    color: #FF0000; /* Red error message text */
+    margin-top: 10px;
+}
+
+.link {
+    text-align: center;
+}
+
+.link a {
+    color: #FF6F00; /* Orange link text */
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
 }
