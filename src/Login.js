@@ -18,7 +18,7 @@ function Login () {
 
     const [SignedInStatus, setSignedInStatus] = useState(false)
     const[showTeam, setShowTeam] = useState(false)
-    const [showlogin, setShowLogin] = useState(false)
+    const [showlogin, setShowLogin] = useState(true)
 
     const [values, setValues] = useState({})
 
@@ -36,8 +36,7 @@ function Login () {
         });
         const err = validation(values);
         setErrors(err);
-        //console.log();
-        //if(err.playerName === "" && err.playerID === ""){
+        if(err.playerName === "" && err.playerID === ""){
             console.log("Executed");
             axios.post('http://localhost:8801/addPlayer', {
                 playerID: playerID,
@@ -48,7 +47,7 @@ function Login () {
                 setPlayerAmount(playerAmount+1);
             })
             .catch(err => console.log(err));
-        //}
+        }
     }
 
     const remove = () => {
@@ -72,9 +71,11 @@ function Login () {
                 setLoginStatus("Welcome, " + res.data[0].userName + "!");
                 setTeamID(res.data[0].teamID);
                 setSignedInStatus(true);
+                setShowLogin(false);
                 setShowTeam(true);
+                setPlayerAmount(playerAmount-1)
             }
-            })
+         })
         .catch(err => console.log(err));
     }
 
@@ -87,77 +88,76 @@ function Login () {
 
     const signedIn = () => {
         setSignedInStatus(false);
+        setShowLogin(true);
+        setShowTeam(false)
         setLoginStatus("Signed out");
     };
 
 
     return (
         <div className= "Map">
-            <h1 className="title">Captain Sign In</h1><div className="label">
+            <div>{showlogin ? 
+            <><h1 className="title">Captain Sign In</h1><div className="label">
                     <label classname="label" for="username">username</label>
-                </div>
-                    <div>
+                </div><div>
                         <input type="username" placeholder=" username" id="username" name="username"
                             onChange={e => setUsername(e.target.value)} />
-                    </div>
-                    <div>
+                    </div><div>
                         <div className="label">
                             <label for="password">password</label>
                         </div>
                         <input type="password" placeholder=" *********" id="password" name="password"
                             onChange={e => setPassword(e.target.value)} />
-                    </div>
-                    <div className="loginBut">
+                    </div><div className="loginBut">
                         <button onClick={login}>Login</button>
-                    </div>
+                    </div></>
+                    : <div><button onClick={signedIn}>Sign Out</button></div>}</div>
                     <div><p className = "text">{loginStatus}</p></div>
 
-                    <div className="text">
-                        <h1 className="title">Team</h1>
-                        <button onClick={teams}>Show Team</button>
+             <div>{showTeam ? 
+                    <><div className="text">
+                    <h1 className="title">Team</h1>
+                    <button onClick={teams}>Show Team</button>
                     <div className="teamsDisplay">
                         <table>
                             <thead>
                                 <th>Name</th>
-                                {' '}
-                                <th>Number</th>
-                        </thead>
-                        <tbody>
-                            {team.map((d, i) => (
-                                <tr key={i}>
-                                    <td>{d.playerName}</td>
-                                    <td>{d.playerID}</td>
-                                </tr>
-                            ))}
-                        </tbody>
+                            </thead>
+                            <tbody>
+                                {team.map((d, i) => (
+                                    <tr key={i}>
+                                        <td>{d.playerName}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
                         </table>
                     </div>
-                    <div><button onClick={signedIn}>Sign Out</button></div>
-                </div>
-                
-                <div>
-                    <div>
-                    <label className="labelPlayerName" for="PlayerName">Player Name</label>
-                    </div>
-                    <div>
-                        <input type="playerName" placeholder="Player name" id="playername" name="playerName"
-                            onChange={e => setPlayerName(e.target.value)} />
-                            <div>{errors.playerName && <span>{errors.playerName}</span>}</div>
-                    </div>
-                    <div>
-                        <div className="label">
-                            <label for="playerID">Player Num</label>
+                </div><div>
+                        <div>
+                            <label className="labelPlayerName" for="PlayerName">Player Name</label>
                         </div>
-                        <input type="playerID" placeholder="id" id="playerID" name="playerID"
-                            onChange={e => setPlayerID(e.target.value)} />
-                        <div>{errors.playerID && <span>{errors.playerID}</span>}</div>
-                    </div>
-                    <div>
-                        <button onClick={add}>Add Player</button>
-                        {' '}
-                        <button onClick={remove}>remove Player</button>
-                    </div>
-                </div>
+                        <div>
+                            <input type="playerName" placeholder="Player name" id="playername" name="playerName"
+                                onChange={e => setPlayerName(e.target.value)} />
+                            <div>{errors.playerName && <span>{errors.playerName}</span>}</div>
+                        </div>
+                        <div>
+                            <div className="label">
+                                <label for="playerID">Player ID</label>
+                            </div>
+                            <input type="playerID" placeholder="id" id="playerID" name="playerID"
+                                onChange={e => setPlayerID(e.target.value)} />
+                            <div>{errors.playerID && <span>{errors.playerID}</span>}</div>
+                        </div>
+                        <div>
+                            <button onClick={add}>Add Player</button>
+                            <div>
+                                <p>Input the player's name to remove a player</p>
+                            <button onClick={remove}>remove Player</button>
+                            </div>
+                        </div>
+                    </div></>
+            : <p className="text">Team captain login to manage team.</p>}</div>
         </div>    
     );
 }

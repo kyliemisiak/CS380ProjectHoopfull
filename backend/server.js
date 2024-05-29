@@ -64,7 +64,7 @@ app.post('/remove', (req, res) => {
   const playerName = req.body.playerName;
   
   db.query(removePlayer, [playerName], (err, data) => {
-      if (err) return res.json("Error")
+      if (err) return res.json("Player not found")
       return res.json(data);
   })
 })
