@@ -1,0 +1,77 @@
+/* Register.css */
+
+/* Apply general styles */
+body {
+    background-color: #F7F7F7; /* Light gray background */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 700px;
+    margin:  auto;
+    padding: 20px; /* Adjust padding for better spacing */
+    background-color: #FFFFFF; /* White background */
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+h1 {
+    color: #FF6F00; /* Orange text */
+}
+
+label {
+    display: inline-block;
+    font-weight: bold;
+    width: 120px; /* Adjust label width for better alignment */
+    margin-right: 10px; /* Add some spacing between label and input */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 130px); /* Adjust input width to fit the container */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #FF6F00; /* Orange border when focused */
+}
+
+button {
+    width: 100%; /* Make the button fill the container */
+    padding: 10px;
+    background-color: #FF6F00; /* Orange button background */
+    color: #FFFFFF; /* White button text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px; /* Add some space above the button */
+}
+
+button:disabled {
+    background-color: #CCCCCC; /* Light gray button background when disabled */
+    cursor: not-allowed;
+}
+
+.error-msg {
+    color: #FF0000; /* Red error message text */
+    margin-top: 10px;
+}
+
+.link {
+    text-align: center;
+}
+
+.link a {
+    color: #FF6F00; /* Orange link text */
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
