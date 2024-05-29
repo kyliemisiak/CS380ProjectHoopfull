@@ -6,7 +6,7 @@ function validation(values) {
     if(values.playerName === ""){
         error.playerName = "Should not be empty"
     }else{
-        error.email = ""
+        error.playerName = ""
     }
 
     if(values.playerID === ""){

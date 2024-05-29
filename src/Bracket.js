@@ -6,7 +6,7 @@ function Bracket() {
       <div className="Map">
         <h1 className="title">Bracket</h1>
         <div>
-          <img src = {bracket} width={335} height={500} alt = 'flyer'/>
+          <img src = {bracket} width={370} height={335} alt = 'flyer'/>
         </div>
       </div>
     );

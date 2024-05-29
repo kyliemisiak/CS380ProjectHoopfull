@@ -4,6 +4,8 @@ import validation from "./validation";
 
 function Login () {
 
+    /*used
+    */
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [playerName, setPlayerName] = useState('')
@@ -16,16 +18,12 @@ function Login () {
     const [teamIDNum, setTeamID] = useState("")
     const [team, setTeam] = useState([])
 
-    const [SignedInStatus, setSignedInStatus] = useState(false)
     const[showTeam, setShowTeam] = useState(false)
     const [showlogin, setShowLogin] = useState(true)
 
     const [values, setValues] = useState({})
 
     const [errors, setErrors] = useState({})
-
-
-    console.log({values});
 
     const add = (event) =>{
         event.preventDefault();
@@ -36,6 +34,7 @@ function Login () {
         });
         const err = validation(values);
         setErrors(err);
+        console.log(err);
         if(err.playerName === "" && err.playerID === ""){
             console.log("Executed");
             axios.post('http://localhost:8801/addPlayer', {
@@ -66,11 +65,9 @@ function Login () {
             if(res.data.message){
                 setLoginStatus(res.data.message);
                 setShowLogin(false)
-                setSignedInStatus(false);
             }else {
                 setLoginStatus("Welcome, " + res.data[0].userName + "!");
                 setTeamID(res.data[0].teamID);
-                setSignedInStatus(true);
                 setShowLogin(false);
                 setShowTeam(true);
                 setPlayerAmount(playerAmount-1)
@@ -87,7 +84,6 @@ function Login () {
     }
 
     const signedIn = () => {
-        setSignedInStatus(false);
         setShowLogin(true);
         setShowTeam(false)
         setLoginStatus("Signed out");
