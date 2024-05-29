@@ -50,6 +50,10 @@ body {
   padding-top: 30px;
 }
 
+.bracketPic{
+  padding-top: 40px;
+}
+
 .img{
   padding: 100;
 }
@@ -64,8 +68,9 @@ body {
 }
 
 .teamsDisplay{
-  padding-right: 70px;
-  padding-left: 210px;
+  padding-top: 35px;
+  padding-right: 95px;
+  padding-left: 230px;
 }
 
 .pics{
@@ -82,6 +87,11 @@ body {
   margin-left: auto;
   width: 500px;
   height: 100vh;
+}
+
+.warnText{
+  color: brown;
+  font-size: small;
 }
 
 

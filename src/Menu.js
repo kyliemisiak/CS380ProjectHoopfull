@@ -4,6 +4,7 @@ import MenuIcon from '@rsuite/icons/Menu';
 import ExploreIcon from '@rsuite/icons/Explore'
 import PageIcon from '@rsuite/icons/Page';
 import NumbersIcon from '@rsuite/icons/Numbers';
+import PeoplesIcon from '@rsuite/icons/Peoples';
 import { Dropdown, IconButton } from 'rsuite';
 import './App.css';
 import "rsuite/dist/rsuite.min.css";
@@ -34,7 +35,7 @@ function Menu() {
           <Dropdown.Item as={NavLink} href="/bracket" icon={<NumbersIcon />}>
             Bracket
           </Dropdown.Item>
-          <Dropdown.Item as={NavLink} href="/login" icon={<NumbersIcon />}>
+          <Dropdown.Item as={NavLink} href="/login" icon={<PeoplesIcon />}>
             Login
           </Dropdown.Item>
         </Dropdown>
